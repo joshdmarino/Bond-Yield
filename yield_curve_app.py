@@ -19,14 +19,11 @@ def get_bond_yields():
 
 def plot_yield_curve(bondsy):
     status = "Normal Yield Curve"
-    if bondsy[8] < bondsy[4]:
-        status = "Inverted Yield Curve"
 
     # Create Plotly figure
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=bonds, y=bondsy, mode='lines+markers', name='US Treasury Yields'))
     fig.update_layout(
-        title=status,
         xaxis_title="Bond Maturity",
         yaxis_title="Interest Rate (%)",
         template="plotly_dark"
